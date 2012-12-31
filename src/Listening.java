@@ -30,7 +30,7 @@ public class Listening implements KeyListener, MouseListener, MouseMotionListene
 				Component.dir = -Component.character.movementSpeed;
 			}
 			break;
-			
+			 
 		case KeyEvent.VK_LEFT:
 			if(!Health.playerIsDead){
 				Component.isMoving = true;
