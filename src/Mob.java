@@ -117,17 +117,17 @@ public class Mob extends DoubleRectangle{
 			}
 		}
 		
-		if(Sky.time == Sky.day && id == Tile.mobRed && new Random().nextInt(5000) < 2){
+		if(Sky.time == Sky.day && id == Tile.mobRed && new Random().nextInt(7000) < 2){
 			Component.mob.remove(this);
 			Spawner.totalMobs -=1;
 			System.out.println("Mob (zombie) Despawned");
 		}
-		if(Sky.time == Sky.day && id == Tile.bob && new Random().nextInt(5000) < 2){
+		if(Sky.time == Sky.day && id == Tile.bob && new Random().nextInt(7000) < 2){
 			Component.mob.remove(this);
 			Spawner.totalMobs -=1;
 			System.out.println("Mob (bob) Despawned");
 		}
-		if(Sky.time == Sky.day && id == Tile.bat && new Random().nextInt(5000) < 2){
+		if(Sky.time == Sky.day && id == Tile.bat && new Random().nextInt(7000) < 2){
 			Component.mob.remove(this);
 			Spawner.batCount -=1;
 			System.out.println("Bat Despawned");
