@@ -67,6 +67,7 @@ public class Listening implements KeyListener, MouseListener, MouseMotionListene
 			if(Component.inGame){
 				Component.inGame = false;
 				System.out.println("Paused Game");
+				System.out.println("GIT test");
 			}else if(!Component.inGame){
 				Component.inGame = true;
 				System.out.println("Game Unpaused");
