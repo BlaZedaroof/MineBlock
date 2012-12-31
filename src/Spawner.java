@@ -24,13 +24,17 @@ public class Spawner implements Runnable {
 					spawnMob(new Red(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize *2, Tile.mobRed));
 					spawnMob(new Red(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize *2, Tile.mobRed));
 					spawnMob(new Bat(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.bat));
-					spawnMob(new Robot(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize*2, Tile.robot));
-					if(new Random().nextInt(100) < 10){
-					spawnMob(new Bob(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize *2, Tile.bob));
-					System.out.println("Bob Spawned");
-					totalMobs +=1;
+					if(new Random().nextInt(10) < 1){
+						spawnMob(new Robot(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize*2, Tile.robot));
+						System.out.println("Robot Spawned");
+						totalMobs += 1;
 					}
-					totalMobs +=4;
+					if(new Random().nextInt(100) < 10){
+						spawnMob(new Bob(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize *2, Tile.bob));
+						System.out.println("Bob Spawned");
+						totalMobs +=1;
+					}
+					totalMobs +=3;
 					batCount += 1;
 					System.out.println("Mobs Spawned: " + totalMobs);
 					System.out.println("Bats Spawned: " + batCount);
