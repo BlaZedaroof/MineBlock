@@ -283,22 +283,22 @@ public class Level {
 				}
 			}
 			// Water Physics
-				/* try{
-					if(block[x][y].id == Tile.water && block[x+1][y].id == Tile.air && block[x+1][y+1].id != Tile.air){
+				try{
+					if((block[x][y].id == Tile.water && block[x+1][y].id == Tile.air && block[x+1][y+1].id != Tile.air || block[x][y].id == Tile.water && block[x+1][y].id == Tile.stars && block[x+1][y+1].id != Tile.stars)){
 						block[x+1][y].id = Tile.water1;
-					}else if(block[x][y].id == Tile.water1 && block[x+1][y].id == Tile.air && block[x+1][y+1].id != Tile.air && block[x+1][y+1].id != Tile.water1){
+					}else if((block[x][y].id == Tile.water1 && block[x+1][y].id == Tile.air || block[x][y].id == Tile.water1 && block[x+1][y].id == Tile.stars) && block[x+1][y+1].id != Tile.air && block[x+1][y+1].id != Tile.water1){
 						block[x+1][y].id = Tile.water2;
-					}else if(block[x][y].id == Tile.water2 && block[x+1][y].id == Tile.air && block[x+1][y+1].id != Tile.air){
+					}else if((block[x][y].id == Tile.water2 && block[x+1][y].id == Tile.air || block[x][y].id == Tile.water2 && block[x+1][y].id == Tile.stars) && block[x+1][y+1].id != Tile.air){
 						block[x+1][y].id = Tile.water3;
 					}else if(block[x][y].id == Tile.water3 && block[x+1][y].id == Tile.air && block[x+1][y+1].id != Tile.air){
 						block[x+1][y].id = Tile.water4;
-					}else if(block[x][y].id == Tile.water && block[x][y+1].id == Tile.air){
+					}else if(block[x][y].id == Tile.water && (block[x][y+1].id == Tile.air || block[x][y+1].id == Tile.stars)){
 						block[x][y+1].id = Tile.water;
 					}else if(block[x][y].id == Tile.water && block[x-1][y].id == Tile.air && block[x+1][y+1].id !=Tile.air){
 						block[x-1][y].id = Tile.water1;
 					}
 				}catch(Exception e){}
-				*/
+	
 	// Allow the player to build & Destroy blocks
 		if(Component.isMouseLeft || Component.isMouseRight){
 					if(x >=0 && y >= 0 && x< worldW && y < worldH){
