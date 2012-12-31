@@ -7,12 +7,22 @@ public class Listening implements KeyListener, MouseListener, MouseMotionListene
 		int key = e.getKeyCode();
 		
 		switch(key){
+		// Right
 		case KeyEvent.VK_D:
 			if(!Health.playerIsDead){
 				Component.isMoving = true;
 				Component.dir = Component.character.movementSpeed;
 			}
 			break;
+			
+		case KeyEvent.VK_RIGHT:
+			if(!Health.playerIsDead){
+				Component.isMoving = true;
+				Component.dir = Component.character.movementSpeed;
+			}
+			break;
+			
+			// Left
 		
 		case KeyEvent.VK_A:
 			if(!Health.playerIsDead){
@@ -21,9 +31,23 @@ public class Listening implements KeyListener, MouseListener, MouseMotionListene
 			}
 			break;
 			
+		case KeyEvent.VK_LEFT:
+			if(!Health.playerIsDead){
+				Component.isMoving = true;
+				Component.dir = -Component.character.movementSpeed;
+			}
+			break;
+			
+			// Up or Jump
 		case KeyEvent.VK_W:
 			if(!Health.playerIsDead){
-			Component.isJumping = true;
+				Component.isJumping = true;
+			}
+			break;
+		
+		case KeyEvent.VK_UP:
+			if(!Health.playerIsDead){
+				Component.isJumping = true;
 			}
 			break;
 			
@@ -67,7 +91,6 @@ public class Listening implements KeyListener, MouseListener, MouseMotionListene
 			if(Component.inGame){
 				Component.inGame = false;
 				System.out.println("Paused Game");
-				System.out.println("GIT test");
 			}else if(!Component.inGame){
 				Component.inGame = true;
 				System.out.println("Game Unpaused");
@@ -87,6 +110,11 @@ public class Listening implements KeyListener, MouseListener, MouseMotionListene
 				Component.isMoving = false;
 			}
 			break;
+		case KeyEvent.VK_RIGHT:
+			if(Component.dir == Component.character.movementSpeed){
+				Component.isMoving = false;
+			}
+			break;
 		
 		case KeyEvent.VK_A:
 			if(Component.dir == -Component.character.movementSpeed){
@@ -94,7 +122,17 @@ public class Listening implements KeyListener, MouseListener, MouseMotionListene
 			}
 			break;
 			
+		case KeyEvent.VK_LEFT:
+			if(Component.dir == -Component.character.movementSpeed){
+				Component.isMoving = false;
+			}
+			break;
+			
 		case KeyEvent.VK_W:
+			Component.isJumping = false;
+			break;
+		
+		case KeyEvent.VK_UP:
 			Component.isJumping = false;
 			break;
 			
