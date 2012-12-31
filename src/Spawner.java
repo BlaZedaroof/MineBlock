@@ -21,23 +21,22 @@ public class Spawner implements Runnable {
 		while(isRunning){
 			if(totalMobs < Tile.maxEnemies && Sky.time == Sky.night){
 				// Spawning Mobs at Night
-					spawnMob(new Red(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize *2, Tile.mobRed));
-					spawnMob(new Red(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize *2, Tile.mobRed));
-					spawnMob(new Bat(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.bat));
+					spawnMob(new Red(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize *2, Tile.mobRed, 100));
+					spawnMob(new Red(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize *2, Tile.mobRed, 100));
+					spawnMob(new Bat(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.bat, 100));
 					if(new Random().nextInt(10) < 1){
-						spawnMob(new Robot(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize*2, Tile.robot));
+						spawnMob(new Robot(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize*2, Tile.robot, 200));
 						System.out.println("Robot Spawned");
 						totalMobs += 1;
 					}
 					if(new Random().nextInt(100) < 10){
-						spawnMob(new Bob(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize *2, Tile.bob));
+						spawnMob(new Bob(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize *2, Tile.bob, 500));
 						System.out.println("Bob Spawned");
 						totalMobs +=1;
 					}
 					totalMobs +=3;
 					batCount += 1;
 					System.out.println("Mobs Spawned: " + totalMobs);
-					System.out.println("Bats Spawned: " + batCount);
 				}
 			try{
 				Thread.sleep(new Random().nextInt(1000) + 5000);
@@ -45,10 +44,9 @@ public class Spawner implements Runnable {
 			
 			if(Component.mob.toArray().length < Tile.maxMobs){
 				// Spawning Animals
-				spawnMob(new Pig(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize*2, Tile.tileSize, Tile.pig));
-				spawnMob(new Chicken(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.chicken));
-				spawnMob(new Chicken(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.chicken));
-				spawnMob(new Bat(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.bat));
+				spawnMob(new Pig(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize*2, Tile.tileSize, Tile.pig, 50));
+				spawnMob(new Chicken(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.chicken, 50));
+				spawnMob(new Chicken(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.chicken, 50));
 				animalCount += 6;
 				chickenCount += 2;
 				pigCount += 1;

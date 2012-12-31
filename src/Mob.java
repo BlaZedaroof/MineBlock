@@ -14,13 +14,15 @@ public class Mob extends DoubleRectangle{
 	
 	public int jumpHeight = 50,jumpingCount = 0;
 	public int animation = 0,animationFrame = 0,animationTime = 20;
+	public int health;
+	
 	private boolean isJumping = false;
 	private boolean isMoving = false;
 	private boolean isFalling = false;
 	
-	public Mob(int x,int y,int width,int height, int[] id){
+	public Mob(int x,int y,int width,int height, int[] id, int health){
 		setBounds(x,y,width,height);
-		
+		this.health = health;
 		this.id = id;
 	}
 	
@@ -133,6 +135,7 @@ public class Mob extends DoubleRectangle{
 			System.out.println("Bat Despawned");
 		}
 		
+		damageMob();
 	}
 	
 	public boolean isCollidingWithBlock(Point pt1,Point pt2){
@@ -149,6 +152,22 @@ public class Mob extends DoubleRectangle{
 		}
 		
 		return false;
+	}
+	
+	public void damageMob(){
+		if(Component.mse.x > x && Component.mse.x < x + width){
+			if(Component.mse.y > y && Component.mse.y < y + height){
+				System.out.println("mouse hovering over mob");
+				if(Component.isMouseLeft){
+					health -= 10;
+					System.out.println("Damaged Mob");
+				}
+			}	
+		}
+		
+		if(health <= 0){
+			Component.mob.remove(this);
+		}
 	}
 	
 	public void render(Graphics g){

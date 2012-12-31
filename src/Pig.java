@@ -2,8 +2,8 @@ import java.awt.*;
 
 public class Pig extends Mob {
 	
-	public Pig(int x, int y, int width, int height , int[] id){
-		super(x, y, width, height, id);
+	public Pig(int x, int y, int width, int height , int[] id, int health){
+		super(x, y, width, height, id, health);
 	}
 	
 	public void tick() {
