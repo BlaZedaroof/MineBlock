@@ -3,7 +3,7 @@ import java.awt.*;
 public class Sky {
 	public static int day = 0;
 	public static int night = 1;
-	public static int time = night;
+	public static int time = day;
 	public int r1 = 70, g1 = 120, b1 = 230; // Day Colour
 	public int r2 = 12, g2 = 40, b2 = 90; // Night Colour
 	public int r = r1, g = g1, b = b1;
