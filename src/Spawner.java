@@ -45,11 +45,12 @@ public class Spawner implements Runnable {
 			if(Component.mob.toArray().length < Tile.maxMobs){
 				// Spawning Animals
 				spawnMob(new Pig(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize*2, Tile.tileSize, Tile.pig, 50));
+				spawnMob(new Pig(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize*2, Tile.tileSize, Tile.pig, 50));
 				spawnMob(new Chicken(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.chicken, 50));
 				spawnMob(new Chicken(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.chicken, 50));
 				animalCount += 6;
 				chickenCount += 2;
-				pigCount += 1;
+				pigCount += 2;
 				System.out.println("Bat's Spawned: " + batCount);
 				System.out.println("Chicken Spawned: " + chickenCount);
 				System.out.println("Pig's Spawned: " + pigCount);
