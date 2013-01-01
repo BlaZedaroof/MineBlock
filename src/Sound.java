@@ -1,10 +1,7 @@
-import sun.audio.*;
-import java.io.*;
-
 import javax.sound.sampled.*;
 
 public class Sound {
-	public static synchronized void music(){
+	public synchronized void music(){
 		new Thread(new Runnable(){
 		public void run(){
 			try{
