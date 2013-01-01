@@ -12,6 +12,7 @@ public class Sound {
 					AudioInputStream inputStream = AudioSystem.getAudioInputStream(Component.class.getResourceAsStream("backgroundMusic.wav"));
 					clip.open(inputStream);
 					clip.start();
+					System.out.println("Music Started");
 					clip.loop(10000);
 			}catch(Exception e){
 				System.err.println(e.getMessage());
