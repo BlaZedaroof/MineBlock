@@ -10,8 +10,8 @@ public class Tile {
 	public static int invCellSpace = 4;
 	public static int invBorderSpace = 4;
 	public static int invItemBorder = 3;
-	public static int maxMobs = 25;
-	public static int maxEnemies = 9;
+	public static int maxMobs = 30;
+	public static int maxEnemies = 12;
 	
 	//Blocks & Paintings
 	public static final int[] air = {-1,-1};
