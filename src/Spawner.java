@@ -26,6 +26,7 @@ public class Spawner implements Runnable {
 					spawnMob(new Bat(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize, Tile.bat, 100));
 					if(new Random().nextInt(10) < 1){
 						spawnMob(new Robot(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize*2, Tile.robot, 200));
+						spawnMob(new Robot(new Random().nextInt((Level.worldW - 2) * Tile.tileSize) + Tile.tileSize + 30,50, Tile.tileSize, Tile.tileSize*2, Tile.robot, 200));
 						System.out.println("Robot Spawned");
 						totalMobs += 1;
 					}
