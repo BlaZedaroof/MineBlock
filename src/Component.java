@@ -123,10 +123,13 @@ public class Component extends Applet implements Runnable{
 
 	public void run(){
 		screen = createVolatileImage(pixel.width, pixel.height);
+		Sound sound = new Sound();
+		sound.music();
 		
 		while(isRunning){
 			tick();
 			render();
+			
 			try{
 				Thread.sleep(5);
 			}catch(Exception e){e.printStackTrace();}
