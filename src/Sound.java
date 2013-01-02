@@ -1,6 +1,7 @@
 import javax.sound.sampled.*;
 
 public class Sound {
+	
 	public synchronized void music(){
 		new Thread(new Runnable(){
 		public void run(){
