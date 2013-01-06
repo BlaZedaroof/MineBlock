@@ -13,6 +13,8 @@ public class Level {
 	public static int emeraldCount = 0;
 	public static int rubyCount = 0;
 	public static int saphireCount = 0;
+	
+	public static boolean isInInventory;
 
 	public Block[][] block = new Block[worldW][worldH];
 	
@@ -306,8 +308,135 @@ public class Level {
 							int sid[] = Inventory.invBar[Inventory.selected].id;
 							
 							if(Component.isMouseLeft){	
-								if(block[x][y].id != Tile.solidAir && block[x][y].id != Tile.bedrock && block[x][y].id != Tile.stars){
-									block[x][y].id = Tile.air;	
+								isInInventory = false;
+								if(block[x][y].id != Tile.solidAir && block[x][y].id != Tile.bedrock && block[x][y].id != Tile.stars && block[x][y].id != Tile.air){
+									
+									
+									// Places Blocks in Inventory (This will be cleaned up at some point)
+									for(int i =0; i<Inventory.invBar.length; i++){
+										if(Inventory.invBar[0].id == Tile.air || Inventory.invBar[0].id == block[x][y].id){
+											Inventory.invBar[0].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBar[1].id == Tile.air && !isInInventory) || Inventory.invBar[1].id == block[x][y].id){
+											Inventory.invBar[1].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBar[2].id == Tile.air && !isInInventory) || Inventory.invBar[2].id == block[x][y].id){
+											Inventory.invBar[2].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBar[3].id == Tile.air && !isInInventory) || Inventory.invBar[3].id == block[x][y].id){
+											Inventory.invBar[3].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBar[4].id == Tile.air && !isInInventory) || Inventory.invBar[4].id == block[x][y].id){
+											Inventory.invBar[4].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBar[5].id == Tile.air && !isInInventory) || Inventory.invBar[5].id == block[x][y].id){
+											Inventory.invBar[5].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[0].id == Tile.air && !isInInventory) || Inventory.invBag[0].id == block[x][y].id){
+											Inventory.invBag[0].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[1].id == Tile.air && !isInInventory) || Inventory.invBag[1].id == block[x][y].id){
+											Inventory.invBag[1].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[2].id == Tile.air && !isInInventory) || Inventory.invBag[2].id == block[x][y].id){
+											Inventory.invBag[2].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[3].id == Tile.air && !isInInventory) || Inventory.invBag[3].id == block[x][y].id){
+											Inventory.invBag[3].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[4].id == Tile.air && !isInInventory) || Inventory.invBag[4].id == block[x][y].id){
+											Inventory.invBag[4].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[5].id == Tile.air && !isInInventory) || Inventory.invBag[5].id == block[x][y].id){
+											Inventory.invBag[5].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[6].id == Tile.air && !isInInventory) || Inventory.invBag[6].id == block[x][y].id){
+											Inventory.invBag[6].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[7].id == Tile.air && !isInInventory) || Inventory.invBag[7].id == block[x][y].id){
+											Inventory.invBag[7].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[8].id == Tile.air && !isInInventory) || Inventory.invBag[8].id == block[x][y].id){
+											Inventory.invBag[8].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[9].id == Tile.air && !isInInventory) || Inventory.invBag[9].id == block[x][y].id){
+											Inventory.invBag[9].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[10].id == Tile.air && !isInInventory) || Inventory.invBag[10].id == block[x][y].id){
+											Inventory.invBag[10].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[11].id == Tile.air && !isInInventory) || Inventory.invBag[11].id == block[x][y].id){
+											Inventory.invBag[11].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[12].id == Tile.air && !isInInventory) || Inventory.invBag[12].id == block[x][y].id){
+											Inventory.invBag[12].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[13].id == Tile.air && !isInInventory) || Inventory.invBag[13].id == block[x][y].id){
+											Inventory.invBag[13].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[14].id == Tile.air && !isInInventory) || Inventory.invBag[14].id == block[x][y].id){
+											Inventory.invBag[14].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[15].id == Tile.air && !isInInventory) || Inventory.invBag[15].id == block[x][y].id){
+											Inventory.invBag[15].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[16].id == Tile.air && !isInInventory) || Inventory.invBag[16].id == block[x][y].id){
+											Inventory.invBag[16].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[17].id == Tile.air && !isInInventory) || Inventory.invBag[17].id == block[x][y].id){
+											Inventory.invBag[17].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[18].id == Tile.air && !isInInventory) || Inventory.invBag[18].id == block[x][y].id){
+											Inventory.invBag[18].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[19].id == Tile.air && !isInInventory) || Inventory.invBag[19].id == block[x][y].id){
+											Inventory.invBag[19].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[20].id == Tile.air && !isInInventory) || Inventory.invBag[20].id == block[x][y].id){
+											Inventory.invBag[20].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[21].id == Tile.air && !isInInventory) || Inventory.invBag[21].id == block[x][y].id){
+											Inventory.invBag[21].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[22].id == Tile.air && !isInInventory) || Inventory.invBag[22].id == block[x][y].id){
+											Inventory.invBag[22].id = block[x][y].id;
+											isInInventory = true;
+										}
+										if((Inventory.invBag[23].id == Tile.air && !isInInventory) || Inventory.invBag[23].id == block[x][y].id){
+											Inventory.invBag[23].id = block[x][y].id;
+											isInInventory = true;
+										}
+										
+									}
+									block[x][y].id = Tile.air;
 								}
 							}else if(Component.isMouseRight){
 								if(block[x][y].id == Tile.air || block[x][y].id == Tile.stars){

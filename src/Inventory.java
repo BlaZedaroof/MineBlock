@@ -28,12 +28,12 @@ public class Inventory {
 			}
 		}
 		
-		invBar[0].id = Tile.earth;
-		invBar[1].id = Tile.grass;
-		invBar[2].id = Tile.sand;
-		invBar[3].id = Tile.jared;
-		invBar[4].id = Tile.wood;
-		invBar[5].id = Tile.stone;
+		if(invBar[0].id == Tile.air){
+			if(Component.isMouseLeft && Component.level.block[x][y].id != Tile.air){
+				invBar[0].id = Component.level.block[x][y].id;
+			}
+		}
+		
 		invBag[0].id = Tile.leaves;
 		invBag[1].id = Tile.glass;
 		invBag[2].id = Tile.plank;
@@ -59,6 +59,9 @@ public class Inventory {
 							isHolding = false;
 						}else if(isHolding && invBar[i].id != Tile.air){
 							int[] con = invBar[i].id;
+							if(invBar[i].id == holdingID){
+								isHolding = false;
+							}
 							
 							invBar[i].id = holdingID;
 							holdingID = con;
@@ -79,6 +82,9 @@ public class Inventory {
 							isHolding = false;
 						}else if(isHolding && invBag[i].id != Tile.air){
 							int[] con = invBag[i].id;
+							if(invBag[i].id == holdingID){
+								isHolding = false;
+							}
 							
 							invBag[i].id = holdingID;
 							holdingID = con;

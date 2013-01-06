@@ -1,7 +1,7 @@
 import javax.sound.sampled.*;
 
 public class Sound {
-	
+
 	public synchronized void music(){
 		new Thread(new Runnable(){
 		public void run(){
@@ -11,7 +11,7 @@ public class Sound {
 					clip.open(inputStream);
 					clip.start();
 					System.out.println("Music Started");
-					clip.loop(10000);
+					clip.loop(Clip.LOOP_CONTINUOUSLY);
 			}catch(Exception e){
 				System.err.println(e.getMessage());
 			}
