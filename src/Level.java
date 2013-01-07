@@ -309,6 +309,7 @@ public class Level {
 					if((block[x][y].id == Tile.earth && block[x][y-1].id == Tile.air) && (block[x-1][y].id == Tile.grass || block[x+1][y].id == Tile.grass || block[x-1][y+1].id == Tile.grass || block[x+1][y+1].id == Tile.grass)){
 						if(rand.nextInt(grassSpreadSpeed) == 1){
 							block[x][y].id = Tile.grass;
+							System.out.println("Grass Spread!");
 						}
 					}
 				}catch(Exception e){}
