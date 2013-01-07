@@ -300,6 +300,16 @@ public class Level {
 						block[x-1][y].id = Tile.water1;
 					}
 				}catch(Exception e){}
+				
+			// Grass Spread
+				Random rand = new Random();
+				try{
+					if((block[x][y].id == Tile.earth && block[x][y-1].id == Tile.air) && (block[x-1][y].id == Tile.grass || block[x+1][y].id == Tile.grass || block[x-1][y+1].id == Tile.grass || block[x+1][y+1].id == Tile.grass)){
+						if(rand.nextInt(500) == 1){
+							block[x][y].id = Tile.grass;
+						}
+					}
+				}catch(Exception e){}
 	
 	// Allow the player to build & Destroy blocks
 		if(Component.isMouseLeft || Component.isMouseRight){
