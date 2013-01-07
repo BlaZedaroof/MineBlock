@@ -2,7 +2,7 @@ import java.awt.*;
 import java.util.*;
 
 public class Level {
-	public static int worldW = 800, worldH = 800;
+	public static int worldW = 500, worldH = 500;
 	public static int diamondCount = 0;
 	public static int coalCount = 0;
 	public static int redstoneCount = 0;
