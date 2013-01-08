@@ -76,6 +76,7 @@ public class Component extends Applet implements Runnable{
 		Component comp = new Component();
 		System.out.println("Mineblock Development Console: ");
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+		System.out.println("Current Version: " + versionNumber);
 	    frame = new JFrame();
 		frame.add(comp);
 		frame.pack();

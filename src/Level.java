@@ -14,7 +14,7 @@ public class Level {
 	public static int rubyCount = 0;
 	public static int saphireCount = 0;
 	
-	public static int grassSpreadSpeed = 500; // 500 = default, Smaller is Quicker :D
+	public static int grassSpreadSpeed = 750; // 500 = default, Smaller is Quicker :D
 	
 	public static boolean isInInventory;
 
@@ -307,7 +307,7 @@ public class Level {
 				Random rand = new Random();
 				try{
 					// Add Grass Spread for other 2 [x-1][y-1] & [x+1][y-1]
-					if((block[x][y].id == Tile.earth && block[x][y-1].id == Tile.air) && (block[x-1][y].id == Tile.grass || block[x+1][y].id == Tile.grass || block[x-1][y+1].id == Tile.grass || block[x+1][y+1].id == Tile.grass)){
+					if((block[x][y].id == Tile.earth && block[x][y-1].id == Tile.air) && (block[x-1][y].id == Tile.grass || block[x+1][y].id == Tile.grass || block[x-1][y+1].id == Tile.grass || block[x+1][y+1].id == Tile.grass || block[x-1][y-1].id == Tile.grass || block[x+1][y-1].id == Tile.earth)){
 						if(rand.nextInt(grassSpreadSpeed) == 1){
 							block[x][y].id = Tile.grass;
 							System.out.println("Grass Spread!");
