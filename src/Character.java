@@ -91,7 +91,7 @@ public class Character extends DoubleRectangle {
 		for(int i=1; i<=Component.mob.toArray().length-1; i++){
 		if(x >= Component.mob.get(i).x && x<= Component.mob.get(i).x + Component.mob.get(i).width){
 			if(y >= Component.mob.get(i).y && y<= Component.mob.get(i).y + Component.mob.get(i).height){
-				if(Component.mob.get(i).id != Tile.chicken && Component.mob.get(i).id != Tile.pig && Component.mob.get(i).id != Tile.bat && Component.mob.get(i).id != Tile.robot){
+				if(Component.mob.get(i).id != Tile.chicken && Component.mob.get(i).id != Tile.pig){
 					return true;
 				}
 			}
@@ -104,7 +104,7 @@ public class Character extends DoubleRectangle {
 		for(int i=1; i<=Component.mob.toArray().length-1; i++){
 		if(x+width >= Component.mob.get(i).x && x+width<= Component.mob.get(i).x + Component.mob.get(i).width){
 			if(y+height >= Component.mob.get(i).y && y+height<= Component.mob.get(i).y + Component.mob.get(i).height){
-				if(Component.mob.get(i).id != Tile.chicken && Component.mob.get(i).id != Tile.pig && Component.mob.get(i).id != Tile.robot){
+				if(Component.mob.get(i).id != Tile.chicken && Component.mob.get(i).id != Tile.pig){
 					return true;
 				}
 			}
